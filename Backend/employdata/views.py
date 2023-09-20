@@ -43,6 +43,10 @@ def docs(request):
     return Response(routes)
 
 @api_view(['GET'])
+def homePage(request):
+    return Response('Welcome')
+
+@api_view(['GET'])
 def details(request):
     details  = EmployDetails.objects.all()
     serializer = EmployDetailsSerializer(details,many=True)
